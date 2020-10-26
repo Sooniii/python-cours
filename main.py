@@ -25,8 +25,18 @@ def get_names(rep):
     print(name_list)
 
 
-while program:
+def display_all(rep):
+    for k, contact in rep.items():
+        print(f"Phone = {k} / {contact}")
 
+
+def get_contact(phone_number, rep):
+    for k in rep:
+        if phone_number == k:
+            return rep[k]
+
+
+while program:
     new_contact = create_contact()
     add_contact(repertoire, new_contact)
     next_name = input("Rentré un nouveau numéro ? ")
@@ -34,6 +44,11 @@ while program:
         program = False
 
 get_names(repertoire)
+print("------")
+display_all(repertoire)
+
+wanted_number = input("Quelle numéro veux tu chercher ? ")
+print(get_contact(wanted_number, repertoire))
 
 
 
