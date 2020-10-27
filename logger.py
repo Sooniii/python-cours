@@ -2,7 +2,6 @@ from datetime import datetime
 
 
 def write_log(text):
-    #actual_time = str(datetime.now())
     actual_time = "{0:%Y-%m-%d %H:%M:%S}".format(datetime.now())
 
     f = open("phonebook.log", "a")
@@ -11,9 +10,12 @@ def write_log(text):
 
 
 def dump_log():
-    f = open("phonebook.log", "r")
-    line = f.readline()
-    while line:
-        print(line)
+    try:
+        f = open("phonebook.log", "r")
         line = f.readline()
-    f.close()
+        while line:
+            print(line)
+            line = f.readline()
+        f.close()
+    except FileNotFoundError as e:
+        print(e)
