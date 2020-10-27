@@ -1,7 +1,9 @@
 import phonebook
 import logger
+import sys
 
 program = True
+args = sys.argv
 
 
 while program:
@@ -12,4 +14,11 @@ while program:
         program = False
 
 phonebook.console_print()
-logger.dump_log()
+
+for i in range(0, len(args)):
+    if (args[i] == "-display") and (len(args) > i + 1):
+        phonebook.get_contact(args[i + 1], phonebook.repertoire)
+
+for i in range(0, len(args)):
+    if args[i] == "-log":
+        logger.dump_log()

@@ -26,5 +26,5 @@ def dump_log():
             print(line)
             line = f.readline()
         f.close()
-    except FileNotFoundError as e:
-        print(f"File not found. {e}")
+    except FileNotFoundError:
+        print(  "File not found")

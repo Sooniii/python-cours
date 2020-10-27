@@ -63,7 +63,7 @@ def get_contact(phone_number, rep):
     logger.write_log("get_contact")
     for k in rep:
         if phone_number == k:
-            return rep[k]
+            print(f"Le numéro {phone_number} correspond à : {rep[k]}")
 
 
 def console_print():
@@ -79,5 +79,4 @@ def console_print():
     print("Liste de tout les contacts avec coordonées")
     display_all(repertoire)
     print("")
-    wanted_number = input("Quelle numéro veux tu chercher ? ")
-    print(f"Le numéro {wanted_number} correspond à : {get_contact(wanted_number, repertoire)}")
+
