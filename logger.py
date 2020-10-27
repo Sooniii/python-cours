@@ -1,10 +1,12 @@
 from datetime import datetime
 
 
-def write_log(function):
-    actual_time = str(datetime.now())
+def write_log(text):
+    #actual_time = str(datetime.now())
+    actual_time = "{0:%Y-%m-%d %H:%M:%S}".format(datetime.now())
+
     f = open("phonebook.log", "a")
-    f.write(f"{actual_time} : La fonction {function} a été utilisée\n")
+    f.write(f"{actual_time} : La fonction {text} a été utilisée\n")
     f.close()
 
 
