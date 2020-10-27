@@ -1,3 +1,5 @@
+import logger
+
 repertoire = {}
 
 
@@ -11,6 +13,7 @@ def create_contact():
 
 
 def add_contact(rep, contact):
+    logger.write_log("add_contact")
     number = contact["Numéro"]
     rep[number] = contact
 
@@ -25,11 +28,13 @@ def get_names(rep):
 
 
 def display_all(rep):
+    logger.write_log("display_all")
     for k in rep:
         print(rep[k])
 
 
 def get_contact(phone_number, rep):
+    logger.write_log("get_contact")
     for k in rep:
         if phone_number == k:
             return rep[k]

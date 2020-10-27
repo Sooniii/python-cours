@@ -1,4 +1,5 @@
 import phonebook
+import logger
 
 program = True
 
@@ -11,3 +12,4 @@ while program:
         program = False
 
 phonebook.console_print()
+logger.dump_log()
